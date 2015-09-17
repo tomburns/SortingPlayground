@@ -19,10 +19,6 @@ let start = CACurrentMediaTime()
 
 while(!bubbleSorter.doneSorting) {
     try bubbleSorter.iterate()
-    
-//    XCPCaptureValue("Array \(bubbleSorter.stepArrays.count)", value: bubbleSorter.currentArray.description)
-//    plotArrayInPlayground(bubbleSorter.currentArray, title: "Graph \(bubbleSorter.stepArrays.count)")
-
 }
 
 let end = CACurrentMediaTime()

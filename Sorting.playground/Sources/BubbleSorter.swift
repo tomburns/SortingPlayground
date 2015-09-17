@@ -6,9 +6,6 @@ public class BubbleSorter<T: Comparable>: Sorter {
     
     public var stepArrays = [[ItemType]]()
     
-    private var currentIndex: Int
-    private var currentMaxIndex: Int
-    
     public var doneSorting: Bool {
         get {
             guard let lastStep = stepArrays.last else {
@@ -31,6 +28,9 @@ public class BubbleSorter<T: Comparable>: Sorter {
         }
     }
     
+    private var currentIndex: Int
+    private var currentMaxIndex: Int
+    
     public init(initialArray: [ItemType]) {
         self.initialArray = initialArray
         currentIndex = 0
@@ -39,7 +39,7 @@ public class BubbleSorter<T: Comparable>: Sorter {
         stepArrays.append(initialArray)
     }
     
-    public func iterate() throws -> [ItemType] {
+    public func iterate() throws {
         guard let lastStep = stepArrays.last else {
             throw SortErrors.InvalidState
         }
@@ -54,8 +54,6 @@ public class BubbleSorter<T: Comparable>: Sorter {
         }
         
         stepArrays.append(stepArray)
-        
-        return stepArray
     }
     
     private func step(array:[ItemType]) -> [ItemType] {
@@ -66,9 +64,7 @@ public class BubbleSorter<T: Comparable>: Sorter {
             newArray[currentIndex] = array[currentIndex+1]
             newArray[currentIndex+1] = temp
         }
-        
-        print(newArray)
-        
+                
         return newArray
     }
 }

@@ -7,6 +7,7 @@ A playground for playing with various sorts.
 ### Done 
 
 * Bubble Sort
+* Insertion Sort
 
 ### Not Done
 

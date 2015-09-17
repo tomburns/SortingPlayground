@@ -23,6 +23,7 @@ while(!bubbleSorter.doneSorting) {
 
 let end = CACurrentMediaTime()
 
+XCPCaptureValue("Final Array", value: bubbleSorter.currentArray.description)
 plotArrayInPlayground(bubbleSorter.currentArray, title: "Final Graph")
 
 XCPCaptureValue("Total number of iterations", value: bubbleSorter.stepArrays.count)

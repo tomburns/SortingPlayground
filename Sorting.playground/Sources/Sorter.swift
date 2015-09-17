@@ -7,5 +7,5 @@ public protocol Sorter {
     
     var stepArrays: [[ItemType]] { get }
     
-    func iterate() throws -> [ItemType]
+    func iterate() throws
 }

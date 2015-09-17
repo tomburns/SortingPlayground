@@ -1,4 +1,6 @@
-public class BubbleSorter<ItemType: Comparable> {
+public class BubbleSorter<T: Comparable>: Sorter {
+    
+    public typealias ItemType = T
     
     public let initialArray: [ItemType]
     

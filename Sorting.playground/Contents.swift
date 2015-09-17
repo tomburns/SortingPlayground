@@ -3,7 +3,7 @@
 import UIKit
 import XCPlayground
 
-let length = 9
+let length = 10
 var randomArray = [Int]()
 
 while randomArray.count < length {
@@ -12,20 +12,8 @@ while randomArray.count < length {
 
 let bubbleSorter = BubbleSorter<Int>(initialArray:randomArray)
 
-XCPCaptureValue("Initial Array", value: randomArray.description)
-plotArrayInPlayground(randomArray, title: "Initial Graph")
+runSorter(bubbleSorter, title: "Int Bubble Sort")
 
-let start = CACurrentMediaTime()
-
-while(!bubbleSorter.doneSorting) {
-    try bubbleSorter.iterate()
-}
-
-let end = CACurrentMediaTime()
-
-XCPCaptureValue("Final Array", value: bubbleSorter.currentArray.description)
-plotArrayInPlayground(bubbleSorter.currentArray, title: "Final Graph")
-
-XCPCaptureValue("Total number of iterations", value: bubbleSorter.stepArrays.count)
-
-XCPCaptureValue("Time to execute", value: NSString(format: "%.03f seconds",end - start))
+//let bubbleStringSorter = BubbleSorter<String>(initialArray:["foo","bar","baz","cat","dog","pug"])
+//
+//runSorter(bubbleStringSorter, title: "String Bubble Sort")
